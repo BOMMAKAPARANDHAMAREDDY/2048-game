@@ -1,50 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Holtwood+One+SC&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html, body{
     width: 100%;
     height: 100%;
     display: flex;
     background-color: #FEFEE3;
-    font-family: 'Fredoka', sans-serif;
     font-family: 'Holtwood One SC', serif;
 }
 #section1{
+    border: 1px solid yellow;
+    height: 100%;
+    width: 25%;
     height: 100%;
     width: 25%;
     position: relative;
-    /* border: 1px solid red; */
 }
-
+#scoreBox{
+    border: 1px solid red;
+    height: 100%;
+    width: 25%;
+    font-size: 20px;
+    padding: 10px;
+}
 #gameBox{
+    border: 1px solid  green;
     height: 100%;
     width: 50%;
-    position: relative;
-    /* border: 1px solid red; */
 }
-
-#scoreBox{
-    height: 100%;
+#cScore{
     width: 25%;
-    position: relative;
-    /* border: 1px solid yellow; */
+    color: #F7C59F;
+    align-items: center;
 }
 
 header{
     color: #0D3B66;
     font-size: 96px;
-    font-family: 'Fredoka', sans-serif;
     font-family: 'Holtwood One SC', serif;
     position: absolute;
-    left: 200px;
+    left: 600px;
 }
 
 #instructions{
-    /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -52,10 +48,8 @@ header{
     height: 100%;
     font-size: 20px;
     position: absolute;
-    /* top: -10px; */
 }
 #btns {
-    /* border: 1px solid red; */
     width: auto;
     height: 90px;
     display: flex;
@@ -64,7 +58,6 @@ header{
 }
 
 #btns div{
-    /* border: 1px solid red; */
     display: flex;
     justify-content: space-between;
     gap: 5px;
@@ -76,7 +69,6 @@ header{
 }
 
 .btn{
-    /* align-self: center; */
     height: 40px;
     width: 50px;
     background-color: #F3DE2C;
@@ -107,41 +99,118 @@ header{
     right: -14px;
 }
 
+
 .gameContainer{
-    position: absolute;
-    display: flex;
-}
-
-#gamePad{
     background-color: #F5EBE0;
-    position: absolute;
-    left: 70px;
-    top: 200px;
+   width: 500px;
+   height: 500px;
+   position: relative;
+   position: absolute;
+   left: 500px;
+   top: 250px;
 }
 
-.block{
-    height: 120px;
-    width: 120px;
-    background-color: #DDE5B6;
-    justify-content: space-between;
-    position: relative;
-    top: 3px;
-    right: -4px;
-}
-
-#blockContainer{
-    height: 550px;
-    width: 550px;
-    padding: 10px;
+.blockContainer{
+    background-color: #F5EBE0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    padding: 30px;
+    position: absolute;
+
 }
 
-#scoreContainer{
-    font-size: 30px;
+.block{
+    width: 105px;
+    height: 105px;
+    background-color: #DDE5B6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    color: #000;
 }
-#cScores{
-    text-align: center;
-    color: #F7C59F;
+
+.scoreContainer{
+    width: 500px;
+    margin-bottom: 15px;
+}
+
+.block[data-value="2"]{
+    background-color: #ffc0cb;
+}
+
+.block[data-value="4"]{
+    background-color: #add8e6;
+}
+
+.block[data-value="8"]{
+    background-color: #98fb98;
+}
+
+.block[data-value="16"]{
+    background-color: #ffd700;
+}
+
+.block[data-value="32"]{
+    background-color: #ffa07a;
+}
+
+.block[data-value="64"]{
+    background-color: #87ceeb;
+}
+
+.block[data-value="128"]{
+    background-color: #ffff00;
+}
+
+.block[data-value="256"]{
+    background-color: #40e0d0;
+}
+
+.block[data-value="512"]{
+    background-color: #ff69b4;
+}
+
+.block[data-value="1024"]{
+    background-color: #7b68ee;
+}
+
+.block[data-value="2048"]{
+    background-color: #ff6347;
+}
+
+.block[data-value="4096"]{
+    background-color: #a9a9a9;
+}
+
+#restart-btn{
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #f4f4f4;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#game-over{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-blo.block[data-value]{
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.new-tile{
+    animation: appear 0.3s;
 }

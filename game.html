@@ -9,79 +9,63 @@
 </head>
 
 <body>
-    <section id="section1">
-        <div id="instructions">
-            <p>
-                Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
-                into one when <br> they touch. Add <br> them up to <br> reach 2048!
-            </p>
-            <div id="btns">
-                <div>
-                    <div class="btn"></div>
-                    <div class="btn"><img id="upArrow" src="./assets/arrow-up.png" alt=""></div>
-                    <div class="btn"></div>
-                </div>
-                <div>
-                    <div class="btn"><img id="leftArrow"
-                            src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
-                    <div class="btn"><img id="downArrow" src="./assets/down-filled-triangular-arrow.png" alt=""></div>
-                    <div class="btn"><img id="rightArrow" src="./assets/black-tringular-arrowahead-right-direction.png"
-                            alt="left arrow"></div>
-                </div>
-
+  <section id="section1">
+    <div id="instructions">
+        <p>
+            Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
+            into one when <br> they touch. Add <br> them up to <br> reach 2048!
+        </p>
+        <div id="btns">
+            <div>
+                <div class="btn"></div>
+                <div class="btn"><img id="upArrow" src="./assets/arrow-up.png" alt=""></div>
+                <div class="btn"></div>
             </div>
+            <div>
+                <div class="btn"><img id="leftArrow"
+                        src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
+                <div class="btn"><img id="downArrow" src="./assets/down-filled-triangular-arrow.png" alt=""></div>
+                <div class="btn"><img id="rightArrow" src="./assets/black-tringular-arrowahead-right-direction.png"
+                        alt="left arrow"></div>
+            </div>
+
         </div>
-    </section>
-
-
+    </div>
+  </section>
 
     <section id="gameBox">
+        <header>2048</header>
         <div class="gameContainer">
-            <header>2048</header>
-            <div id="gamePad">
-                <div id="blockContainer">
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                    <div class="block">
-                    </div>
-                </div>
+            <div class="blockContainer">
+                <div class="block" data-row="0" data-col="0"></div>
+                <div class="block" data-row="0" data-col="1"></div>
+                <div class="block" data-row="0" data-col="2"></div>
+                <div class="block" data-row="0" data-col="3"></div>
+                <div class="block" data-row="1" data-col="0"></div>
+                <div class="block" data-row="1" data-col="1"></div>
+                <div class="block" data-row="1" data-col="2"></div>
+                <div class="block" data-row="1" data-col="3"></div>
+                <div class="block" data-row="2" data-col="0"></div>
+                <div class="block" data-row="2" data-col="1"></div>
+                <div class="block" data-row="2" data-col="2"></div>
+                <div class="block" data-row="2" data-col="3"></div>
+                <div class="block" data-row="3" data-col="0"></div>
+                <div class="block" data-row="3" data-col="1"></div>
+                <div class="block" data-row="3" data-col="2"></div>
+                <div class="block" data-row="3" data-col="3"></div>
             </div>
         </div>
+    
     </section>
     <section id="scoreBox">
-        <div id="scoreContainer">
-            <div id="cScores">score: <span id="currentScore">0</span></div>
-            <div>High score: <span id="highScore">0</span></div>
+        <div class="scoreContainer">
+            <div id="cScore">Score : <span id="currentScore">0</span></div>
+            <div id="hScore">High Score : <span id="highScore">0</span></div>
         </div>
     </section>
+   
+    
+
     <script src="game.js"></script>
 </body>
 
