@@ -9,8 +9,7 @@
 </head>
 
 <body>
-    <header>2048</header>
-    <div class="gameContainer">
+    <section id="section1">
         <div id="instructions">
             <p>
                 Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
@@ -19,60 +18,71 @@
             <div id="btns">
                 <div>
                     <div class="btn"></div>
-                    <div class="btn"><img src="./assets/arrow-up.png" alt=""></div>
+                    <div class="btn"><img id="upArrow" src="./assets/arrow-up.png" alt=""></div>
                     <div class="btn"></div>
                 </div>
                 <div>
-                    <div class="btn"><img src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
-                    <div class="btn"><img src="./assets/down-filled-triangular-arrow.png" alt=""></div>
-                    <div class="btn"><img src="./assets/black-tringular-arrowahead-right-direction.png" alt="left arrow"></div>
+                    <div class="btn"><img id="leftArrow"
+                            src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
+                    <div class="btn"><img id="downArrow" src="./assets/down-filled-triangular-arrow.png" alt=""></div>
+                    <div class="btn"><img id="rightArrow" src="./assets/black-tringular-arrowahead-right-direction.png"
+                            alt="left arrow"></div>
                 </div>
-                
+
             </div>
         </div>
-        <div id="gamePad">
-            <div id="blockContainer">
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
-                </div>
-                <div class="block">
+    </section>
+
+
+
+    <section id="gameBox">
+        <div class="gameContainer">
+            <header>2048</header>
+            <div id="gamePad">
+                <div id="blockContainer">
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
+                    <div class="block">
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    <section id="scoreBox">
         <div id="scoreContainer">
-            <div>
-                <p id="cScores">score: <span id="currentScore">0</span></p>
-                <p>High score: <span id="highScore">0</span></p>
-            </div>
+            <div id="cScores">score: <span id="currentScore">0</span></div>
+            <div>High score: <span id="highScore">0</span></div>
         </div>
-        <script src="game.js"></script>
+    </section>
+    <script src="game.js"></script>
 </body>
 
 </html>
