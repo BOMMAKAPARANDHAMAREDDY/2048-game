@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2048 Game</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
 </head>
+
 <body>
-    
+    <header>2048</header>
+    <div class="gameContainer">
+        <div id="instructions">
+            <p>
+                Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
+                into one when <br> they touch. Add <br> them up to <br> reach 2048!
+            </p>
+            <div id="btns">
+                <div>
+                    <div class="btn"></div>
+                    <div class="btn"><img src="./assets/arrow-up.png" alt=""></div>
+                    <div class="btn"></div>
+                </div>
+                <div>
+                    <div class="btn"><img src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
+                    <div class="btn"><img src="./assets/down-filled-triangular-arrow.png" alt=""></div>
+                    <div class="btn"><img src="./assets/black-tringular-arrowahead-right-direction.png" alt="left arrow"></div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="gamePad">
+            <div id="blockContainer">
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+                <div class="block">
+                </div>
+            </div>
+        </div>
+        <div id="scoreContainer">
+            <div>
+                <p id="cScores">score: <span id="currentScore">0</span></p>
+                <p>High score: <span id="highScore">0</span></p>
+            </div>
+        </div>
+        <script src="game.js"></script>
 </body>
+
 </html>

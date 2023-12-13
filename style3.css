@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Holtwood+One+SC&display=swap');
+
+body{
+    display: flex;
+    background-color: #FEFEE3;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Holtwood One SC', serif;
+}
+
+header{
+    color: #0D3B66;
+    font-size: 96px;
+    font-family: 'Fredoka', sans-serif;
+    font-family: 'Holtwood One SC', serif;
+    position: relative;
+    left: 530px;
+    top: 100px;
+}
+
+#instructions{
+    position: relative;
+    top: 330px;
+    left: -40px;
+}
+#btns {
+    /* border: 1px solid red; */
+    width: auto;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#btns div{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+}
+#btns div:nth-child(1) div.btn:nth-child(1),#btns div:nth-child(1) div.btn:nth-child(3) {
+    border: 1px solid red;
+    visibility: hidden;
+}
+
+.btn{
+    /* align-self: center; */
+    height: 40px;
+    width: 50px;
+    background-color: #F3DE2C;
+}
+
+.btn>img{
+    height: 40px;
+    width: 40px;
+}
+
+.gameContainer{
+    display: flex;
+}
+
+#gamePad{
+    height: 390px;
+    width: 390px;
+    background-color: #F5EBE0;
+    position: relative;
+    top: 300px;
+}
+
+.block{
+    height: 80px;
+    width: 80px;
+    position: relative;
+    top: 20px;
+    background-color: #DDE5B6;
+    justify-content: space-evenly;
+}
+
+#blockContainer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
+    right: -5px;
+}
+
+#scoreContainer{
+    position: relative;
+    top: 370px;
+    right: -30px;
+}
+#cScores{
+    text-align: center;
+    color: #F7C59F;
+}
