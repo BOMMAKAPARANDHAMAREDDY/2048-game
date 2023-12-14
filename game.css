@@ -24,9 +24,11 @@ html, body{
     width: 50%;
 }
 #cScore{
-    width: 25%;
     color: #F7C59F;
-    align-items: center;
+    text-align: center;
+}
+#hScore{
+    text-align: center;
 }
 
 header{
@@ -128,10 +130,6 @@ header{
     color: #000;
 }
 
-.scoreContainer{
-    width: 500px;
-    margin-bottom: 15px;
-}
 
 .block[data-value="2"]{
     background-color: #C2C5AA;
