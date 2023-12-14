@@ -11,17 +11,17 @@ function getRandomNumber() {
         block.dataset.value = 0;
       }
     }
-    placeRandomTile();
+    placeOnRandomTile();
   }
   
-  function placeRandomTile() {
+  function placeOnRandomTile() {
     const emptyBlocks = [];
     const blockContainer = document.querySelector(".blockContainer");
     for (let i = 1; i <= 4; i++) {
       for (let j = 1; j <= 4; j++) {
         const block = document.querySelector(`.block[data-row="${i}"][data-column="${j}"]`);
         if (block.dataset.value == "0") {
-          emptyBlocks.push({ row: i, column: j });
+         emptyBlocks.push({ row: i, column: j });
         }
       }
     }
@@ -47,4 +47,9 @@ function getRandomNumber() {
       highScore.textContent = sum;
     }
   }
+
+  document.addEventListener("keydown", function(event){
+    event.preventDefault();
+    
+  })
   startGame();
