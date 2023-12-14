@@ -50,6 +50,17 @@ function getRandomNumber() {
 
   document.addEventListener("keydown", function(event){
     event.preventDefault();
-    
+    const direction = event.key;
+    if(["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(direction)) {
+      moveTiles(direction)
+    }
+
+    function movingUp(){
+      for(let col = 1; col <= 4; col++){
+        for(let row = 1; row <=4; row++){
+          
+        }
+      }
+    }
   })
   startGame();
