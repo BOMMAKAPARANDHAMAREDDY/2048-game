@@ -179,6 +179,25 @@ function updateScore() {
     }
   }
 
+  function canMove() {
+    for (let row = 1; row <= 4; row++) {
+      for (let col = 1; col <= 4; col++) {
+        const currentTile = document.querySelector(`.block[data-row="${row}"][data-column="${col}"]`);
+        if (currentTile.dataset.value == "0") {
+          return true;
+        } else {
+          const rightNeighbourTile = document.querySelector(`.block[data-row="${row}"][data-column="${col + 1}"]`);
+          const downNeighbourTile = document.querySelector(`.block[data-row="${row + 1}"][data-column="${col}"]`);
+          if ((rightNeighbourTile && rightNeighbourTile.dataset.value === currentTile.dataset.value) ||
+              (downNeighbourTile && downNeighbourTile.dataset.value == currentTile.dataset.value)) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+
   function moveTiles(direction) {
     switch (direction) {
       case "ArrowUp":
