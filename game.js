@@ -156,16 +156,16 @@ function updateScore() {
         if (currentTile.dataset.value != "0") {
           let newRow = row;
           while (newRow < 4) {
-            let belowTile = document.querySelector(`.block[data-row="${newRow + 1}"][data-column="${col}"]`);
-            if (belowTile.dataset.value == "0") {
-              belowTile.textContent = currentTile.textContent;
-              belowTile.dataset.value = currentTile.dataset.value;
+            let downTile = document.querySelector(`.block[data-row="${newRow + 1}"][data-column="${col}"]`);
+            if (downTile.dataset.value == "0") {
+              downTile.textContent = currentTile.textContent;
+              downTile.dataset.value = currentTile.dataset.value;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               newRow++;
-            } else if (belowTile.dataset.value == currentTile.dataset.value) {
-              belowTile.textContent = 2 * (currentTile.dataset.value);
-              belowTile.dataset.value = belowTile.textContent;
+            } else if (downTile.dataset.value == currentTile.dataset.value) {
+              downTile.textContent = 2 * (currentTile.dataset.value);
+              downTile.dataset.value = downTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               updateScore();
