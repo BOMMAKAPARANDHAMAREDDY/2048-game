@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Holtwood+One+SC&display=swap');
 html, body{
     width: 100%;
-    height: 100%;
+    height: 90%; 
     display: flex;
     background-color: #FEFEE3;
     font-family: 'Holtwood One SC', serif;
@@ -36,11 +36,13 @@ img{
     border-radius: 50px;
     background-color: #dbabab;
     position: absolute;
-    top: 270px;
+    top: 280px;
 }
 
 .scoreboard {
     margin-top: 50px;
+    position: absolute;
+    top: 300px;
 }
 
 .scoreboard p {
