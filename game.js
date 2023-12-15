@@ -52,7 +52,7 @@ function updateScore() {
   }
 }
 
-document.addEventListener("keydown", function (event) {
+ document.addEventListener("keydown", function (event) {
   event.preventDefault();
   const direction = event.key;
   if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(direction)) {
@@ -66,16 +66,16 @@ document.addEventListener("keydown", function (event) {
         if (currentTile.dataset.value != "0") {
           let newRow = row;
           while (newRow > 1) {
-            let aboveTile = document.querySelector(`.block[data-row="${newRow - 1}"][data-column="${col}"]`);
-            if (aboveTile.dataset.value == "0") {
-              aboveTile.textContent = currentTile.textContent;
-              aboveTile.dataset.value = currentTile.dataset.value;
+            let upTile = document.querySelector(`.block[data-row="${newRow - 1}"][data-column="${col}"]`);
+            if (upTile.dataset.value == "0") {
+              upTile.textContent = currentTile.textContent;
+              upTile.dataset.value = currentTile.dataset.value;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               newRow--;
-            } else if (aboveTile.dataset.value == currentTile.dataset.value) {
-              aboveTile.textContent = 2 * (currentTile.dataset.value);
-              aboveTile.dataset.value = aboveTile.textContent;
+            } else if (upTile.dataset.value == currentTile.dataset.value) {
+              upTile.textContent = 2 * (currentTile.dataset.value);
+              upTile.dataset.value = upTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               updateScore();
