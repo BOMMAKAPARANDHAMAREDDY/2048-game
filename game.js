@@ -1,3 +1,7 @@
+let sum = 0;
+let score = 0;
+let highScore = 0;
+
 function getRandomNumber() {
   return Math.random() < 0.75 ? 2 : 4;
 }
@@ -39,18 +43,23 @@ function placeOnRandomTile() {
 
 function updateScore() {
   const currentScore = document.getElementById("currentScore");
-  const highScore = document.getElementById("highScore");
-  const maxScore = parseInt(highScore.textContent);
-  let sum = 0;
-  const blocks = document.querySelectorAll(".block");
-  for (let block of blocks) {
-    sum += parseInt(block.dataset.value);
-  }
-  currentScore.textContent = sum;
-  if (sum > maxScore) {
-    highScore.textContent = sum;
+  const highScoreElement = document.getElementById("highScore");
+  localStorage.setItem("score", sum);
+  const storedHighScore = localStorage.getItem("highScore");
+  const storedScore = parseInt(localStorage.getItem("score")) || 0;
+  const storedHighScorePe = parseInt(storedHighScore) || 0;
+  currentScore.textContent = storedScore;
+
+  if (storedScore > storedHighScorePe) {
+    localStorage.setItem("highScore", storedScore);
+    highScoreElement.textContent = storedScore;
+  } else {
+    highScoreElement.textContent = storedHighScorePe;
   }
 }
+
+let storedHighScore = localStorage.getItem("highScore") || 0;
+document.getElementById("highScore").textContent = storedHighScore;
 
  document.addEventListener("keydown", function (event) {
   event.preventDefault();
@@ -78,6 +87,7 @@ function updateScore() {
               upTile.dataset.value = upTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              sum += parseInt(upTile.dataset.value)
               updateScore();
               break;
             } else {
@@ -108,6 +118,7 @@ function updateScore() {
               leftTile.dataset.value = leftTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              sum += parseInt(leftTile.dataset.value)
               updateScore();
               break;
             } else {
@@ -138,6 +149,7 @@ function updateScore() {
               rightTile.dataset.value = rightTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              sum += parseInt(rightTile.dataset.value)
               updateScore();
               break;
             } else {
@@ -168,6 +180,7 @@ function updateScore() {
               downTile.dataset.value = downTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+            sum += parseInt(downTile.dataset.value)
               updateScore();
               break;
             } else {
@@ -215,7 +228,7 @@ function updateScore() {
     }
 
     placeOnRandomTile();
-    updateScore();
+    // updateScore();
 
   let canMove = false;
   for (let row = 1; row <= 4; row++) {
