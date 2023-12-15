@@ -1,5 +1,9 @@
 function getRandomNumber() {
-  return Math.random() < 1 ? 2 : 4;
+  return Math.random() < 0.75 ? 2 : 4;
+}
+
+function gameOver() {
+  window.location.href = "./gameover.html";
 }
 
 function startGame() {
@@ -47,6 +51,7 @@ function updateScore() {
     highScore.textContent = sum;
   }
 }
+
 document.addEventListener("keydown", function (event) {
   event.preventDefault();
   const direction = event.key;
@@ -58,22 +63,22 @@ document.addEventListener("keydown", function (event) {
     for (let col = 1; col <= 4; col++) {
       for (let row = 2; row <= 4; row++) {
         let currentTile = document.querySelector(`.block[data-row="${row}"][data-column="${col}"]`);
-        if (currentTile.dataset.value !== "0") {
+        if (currentTile.dataset.value != "0") {
           let newRow = row;
           while (newRow > 1) {
-            let upTile = document.querySelector(`.block[data-row="${newRow - 1}"][data-column="${col}"]`);
-            if (upTile.dataset.value == "0") {
-              upTile.textContent = currentTile.textContent;
-              upTile.dataset.value = currentTile.dataset.value;
+            let aboveTile = document.querySelector(`.block[data-row="${newRow - 1}"][data-column="${col}"]`);
+            if (aboveTile.dataset.value == "0") {
+              aboveTile.textContent = currentTile.textContent;
+              aboveTile.dataset.value = currentTile.dataset.value;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               newRow--;
-              updateScore();
-            } else if (upTile.dataset.value == currentTile.dataset.value) {
-              upTile.textContent = 2 * (currentTile.dataset.value);
-              upTile.dataset.value = upTile.textContent;
+            } else if (aboveTile.dataset.value == currentTile.dataset.value) {
+              aboveTile.textContent = 2 * (currentTile.dataset.value);
+              aboveTile.dataset.value = aboveTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              updateScore();
               break;
             } else {
               break;
@@ -83,11 +88,12 @@ document.addEventListener("keydown", function (event) {
       }
     }
   }
+
   function moveLeft() {
     for (let row = 1; row <= 4; row++) {
       for (let col = 2; col <= 4; col++) {
         let currentTile = document.querySelector(`.block[data-row="${row}"][data-column="${col}"]`);
-        if (currentTile.dataset.value !== "0") {
+        if (currentTile.dataset.value != "0") {
           let newCol = col;
           while (newCol > 1) {
             let leftTile = document.querySelector(`.block[data-row="${row}"][data-column="${newCol - 1}"]`);
@@ -97,12 +103,12 @@ document.addEventListener("keydown", function (event) {
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               newCol--;
-              updateScore();
             } else if (leftTile.dataset.value == currentTile.dataset.value) {
               leftTile.textContent = 2 * (currentTile.dataset.value);
               leftTile.dataset.value = leftTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              updateScore();
               break;
             } else {
               break;
@@ -117,7 +123,7 @@ document.addEventListener("keydown", function (event) {
     for (let row = 1; row <= 4; row++) {
       for (let col = 3; col >= 1; col--) {
         let currentTile = document.querySelector(`.block[data-row="${row}"][data-column="${col}"]`);
-        if (currentTile.dataset.value !== "0") {
+        if (currentTile.dataset.value != "0") {
           let newCol = col;
           while (newCol < 4) {
             let rightTile = document.querySelector(`.block[data-row="${row}"][data-column="${newCol + 1}"]`);
@@ -127,12 +133,12 @@ document.addEventListener("keydown", function (event) {
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               newCol++;
-              updateScore();
             } else if (rightTile.dataset.value == currentTile.dataset.value) {
-              rightTile.textContent = 2 * parseInt(currentTile.dataset.value);
+              rightTile.textContent = 2 * (currentTile.dataset.value);
               rightTile.dataset.value = rightTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
+              updateScore();
               break;
             } else {
               break;
@@ -142,26 +148,27 @@ document.addEventListener("keydown", function (event) {
       }
     }
   }
+
   function moveDown() {
     for (let col = 1; col <= 4; col++) {
       for (let row = 3; row >= 1; row--) {
         let currentTile = document.querySelector(`.block[data-row="${row}"][data-column="${col}"]`);
-        if (currentTile.dataset.value !== "0") {
+        if (currentTile.dataset.value != "0") {
           let newRow = row;
           while (newRow < 4) {
-            let downTile = document.querySelector(`.block[data-row="${newRow + 1}"][data-column="${col}"]`);
-            if (downTile.dataset.value == "0") {
-              downTile.textContent = currentTile.textContent;
-              downTile.dataset.value = currentTile.dataset.value;
+            let belowTile = document.querySelector(`.block[data-row="${newRow + 1}"][data-column="${col}"]`);
+            if (belowTile.dataset.value == "0") {
+              belowTile.textContent = currentTile.textContent;
+              belowTile.dataset.value = currentTile.dataset.value;
+              currentTile.textContent = "";
+              currentTile.dataset.value = "0";
+              newRow++;
+            } else if (belowTile.dataset.value == currentTile.dataset.value) {
+              belowTile.textContent = 2 * (currentTile.dataset.value);
+              belowTile.dataset.value = belowTile.textContent;
               currentTile.textContent = "";
               currentTile.dataset.value = "0";
               updateScore();
-              newRow++;
-            } else if (downTile.dataset.value == currentTile.dataset.value) {
-              downTile.textContent = 2 * (currentTile.dataset.value);
-              downTile.dataset.value = downTile.textContent;
-              currentTile.textContent = "";
-              currentTile.dataset.value = "0";
               break;
             } else {
               break;
@@ -171,7 +178,6 @@ document.addEventListener("keydown", function (event) {
       }
     }
   }
-  
 
   function moveTiles(direction) {
     switch (direction) {
@@ -191,10 +197,6 @@ document.addEventListener("keydown", function (event) {
 
     placeOnRandomTile();
     updateScore();
-  }
-
-  function gameOver() {
-    window.location.href = "./gameover.html"
   }
 });
 
