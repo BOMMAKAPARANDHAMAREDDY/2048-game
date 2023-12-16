@@ -36,32 +36,21 @@ button{
     font-family: 'Holtwood One SC', serif;
 }
 
-
-
-
 @media (max-width: 600px) {
-    body{
-        height: 667vh;
-        width: 375vw;
-    }
-    #logo {
-        height: 200px;
-        width: 200px;
-        font-size: 48px;
-        position: absolute;
-        left: 200px;
 
-    }
+  #logo {
+    justify-content: center;
+    text-align: center;
+    font-size: 60px;
+    position: fixed;
+    right: 100px;
+    padding-bottom: 70px;
+  }
 
-    p {
-        padding-top: 10px; 
-        padding-bottom: 10px;
-    }
-
-    button {
-        height: 50px;
-        width: 120px;
-        font-size: 16px;
-    }
+  button {
+    padding: 10px 20px;
+    position: fixed;
+    right: 230px;
+    top: 520px;
+  }
 }
-

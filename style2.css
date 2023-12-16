@@ -42,3 +42,30 @@ button{
     font-family: 'Fredoka', sans-serif;
     font-family: 'Holtwood One SC', serif;
 }
+
+@media (max-width: 600px){
+    button{
+        position: fixed;
+        left: 260px;
+        top: 600px;
+    }
+    #player{
+        position: fixed;
+        left: 90px;
+    }
+    #nick{
+        position: fixed;
+        left: 90px;
+        top: 390px;
+    }
+    #nickNa{
+        position: fixed;
+        left: 260px;
+        top: 400px;
+    }
+    input{
+        justify-content: space-around;
+        position: fixed;
+        left: 260px;
+    }
+}

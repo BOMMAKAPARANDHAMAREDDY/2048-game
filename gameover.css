@@ -54,3 +54,9 @@ img{
     color: #15616D;
     text-align: center;
 }
+
+@media (max-width: 600px){
+    .restart{
+        width: 90px;
+    }
+}

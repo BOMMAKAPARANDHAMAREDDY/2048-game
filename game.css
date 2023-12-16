@@ -177,3 +177,34 @@ header{
 .block[data-value="4096"]{
     background-color: #a9a9a9;
 }
+
+@media (max-width: 600px){
+html,body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    #section1{
+        visibility: hidden;
+        display: none;
+    }
+
+    header{
+        position: fixed;
+        left: 150px;
+    }
+    #scoreBox{
+        height: 60px;
+        width: 190px;
+        font-size: 15px;
+        position: fixed;
+        top: 160px;
+        right: 20px;
+    }
+    .blockContainer{
+        position: fixed;
+        left: 30px;
+    }
+}
