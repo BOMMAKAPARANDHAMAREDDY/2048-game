@@ -56,7 +56,22 @@ img{
 }
 
 @media (max-width: 600px){
+
+    h1{
+        font-size: 45px;
+    }
+
     .restart{
         width: 90px;
+    }
+    #aScore{
+        font-size: 30px;
+    }
+    #bScore{
+        font-size: 30px;
+    }
+    .scoreboard{
+        position: relative;
+        top: 130px;
     }
 }

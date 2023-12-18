@@ -6,33 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2048 game</title>
     <link rel="stylesheet" href="game.css">
-    <link rel="icon" type="image/x-icon" href="./assets/png-transparent-2048-art-area-text-symbol-number-apps-2048-game-text-logo.png">
+    <link rel="icon" type="image/x-icon"
+        href="./assets/png-transparent-2048-art-area-text-symbol-number-apps-2048-game-text-logo.png">
 </head>
 
 <body>
-  <section id="section1">
-    <div id="instructions">
-        <p>
-            Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
-            into one when <br> they touch. Add <br> them up to <br> reach 2048!
-        </p>
-        <div id="btns">
-            <div>
-                <div class="btn"></div>
-                <div class="btn"><img id="upArrow" src="./assets/arrow-up.png" alt=""></div>
-                <div class="btn"></div>
-            </div>
-            <div>
-                <div class="btn"><img id="leftArrow"
-                        src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
-                <div class="btn"><img id="downArrow" src="./assets/down-filled-triangular-arrow.png" alt=""></div>
-                <div class="btn"><img id="rightArrow" src="./assets/black-tringular-arrowahead-right-direction.png"
-                        alt="left arrow"></div>
-            </div>
+    <section id="section1">
+        <div id="instructions">
+            <p>
+                Use your arrow <br> keys to move <br> the tiles. Tiles <br> with the same <br> number merge <br>
+                into one when <br> they touch. Add <br> them up to <br> reach 2048!
+            </p>
+            <div id="btns">
+                <div>
+                    <div class="btn"></div>
+                    <div class="btn" id="upBtn"><img id="upArrow" src="./assets/arrow-up.png" alt="">
+                    </div>
+                    <div class="btn"></div>
+                </div>
+                <div>
+                    <div class="btn" id="leftBtn"><img id="leftArrow"
+                            src="./assets/black-triangular-arrowhead-pointing-to-left-direction.png" alt=""></div>
+                    <div class="btn" id="downBtn"><img id="downArrow" src="./assets/down-filled-triangular-arrow.png"
+                            alt=""></div>
+                    <div class="btn" id="rightBtn"><img id="rightArrow"
+                            src="./assets/black-tringular-arrowahead-right-direction.png" alt="left arrow"></div>
+                </div>
 
+            </div>
         </div>
-    </div>
-  </section>
+    </section>
 
     <section id="gameBox">
         <header>2048</header>
@@ -56,7 +59,7 @@
                 <div class="block" data-row="4" data-column="4"></div>
             </div>
         </div>
-    
+
     </section>
     <section id="scoreBox">
         <div class="scoreContainer">

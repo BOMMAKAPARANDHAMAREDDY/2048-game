@@ -45,27 +45,31 @@ button{
 
 @media (max-width: 600px){
     button{
-        position: fixed;
-        left: 260px;
-        top: 600px;
+        position: relative;
+        left: 120px;
+        top: 300px;
     }
     #player{
-        position: fixed;
-        left: 90px;
+        position: relative;
+        left: 10px;
+        top: 150px;
     }
     #nick{
-        position: fixed;
-        left: 90px;
-        top: 390px;
+        position: relative;
+        left: 10px;
+        top: 180px;
+    }
+    #playerName{
+        width: 160px;
+        position: relative;
+        left: -10px;
+        top: 2px;
     }
     #nickNa{
-        position: fixed;
-        left: 260px;
-        top: 400px;
+        width: 160px;
+        position: relative;
+        left: -10px;
+        top: 2px;
     }
-    input{
-        justify-content: space-around;
-        position: fixed;
-        left: 260px;
-    }
+    
 }

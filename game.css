@@ -34,7 +34,7 @@ header{
     color: #0D3B66;
     font-size: 96px;
     font-family: 'Holtwood One SC', serif;
-    position: absolute;
+    position: fixed;
     left: 600px;
 }
 
@@ -44,7 +44,7 @@ header{
     justify-content: space-evenly;
     padding: 0 40px;
     font-size: 20px;
-    position: absolute;
+    position: fixed;
     top: 200px;
 }
 #btns {
@@ -103,7 +103,7 @@ header{
    /* width: 500px;
    height: 500px; */
    position: relative;
-   position: absolute;
+   position: fixed;
    left: 500px;
    top: 250px;
 }
@@ -114,7 +114,7 @@ header{
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 30px;
-    position: absolute;
+    position: fixed;
 
 }
 
@@ -180,31 +180,46 @@ header{
 
 @media (max-width: 600px){
 html,body{
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-    #section1{
+    #instructions p{
         visibility: hidden;
         display: none;
     }
 
+    #btns{
+        position: relative;
+        top: -35px;
+    }
+
     header{
+        font-size: 60px;
         position: fixed;
-        left: 150px;
+        left: 100px;
     }
     #scoreBox{
         height: 60px;
         width: 190px;
         font-size: 15px;
         position: fixed;
-        top: 160px;
-        right: 20px;
+        top: 140px;
+        right: -10px;
     }
     .blockContainer{
+        height: 270px;
+        width: 270px;
         position: fixed;
         left: 30px;
+        top: 270px;
+    }
+    .block{
+        height: 70px;
+        width: 70px;
+        position: relative;
+        top: -20px;
+        left: -20px;
     }
 }

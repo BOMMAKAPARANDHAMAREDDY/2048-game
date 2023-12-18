@@ -39,18 +39,23 @@ button{
 @media (max-width: 600px) {
 
   #logo {
-    justify-content: center;
+    height: 300px;
+    width: 300px;
+    font-size: 40px;
+    position: relative;
+    left: 50px;
+    margin-top: 40px;
+  }
+  #name{
     text-align: center;
-    font-size: 60px;
-    position: fixed;
-    right: 100px;
-    padding-bottom: 70px;
+    position: relative;
+    top: -40px;
   }
 
   button {
     padding: 10px 20px;
-    position: fixed;
-    right: 230px;
-    top: 520px;
+    position: relative;
+    right: -120px;
+    top: 170px;
   }
 }

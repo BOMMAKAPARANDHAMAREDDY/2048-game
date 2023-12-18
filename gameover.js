@@ -1,3 +1,6 @@
+const backgroundSound = new Audio("./assets/gameover.mp3");
+backgroundSound.play();
+
 document.getElementsByClassName("restart"),onclick = () =>{
     window.location.href = "./game.html"
 }
